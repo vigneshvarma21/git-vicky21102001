@@ -1,0 +1,245 @@
+SQL:
+1.	DDL, DML, TCL, DCL, DQL statements
+Types Of SQL Statements With Examples (c-sharpcorner.com) – Answer in this link
+
+2.	What are Namespace, Tablespace, Entities, Schema etc.,
+Namespaces (Entity SQL): Name Resolution Rules. If an identifier cannot be resolved in the local scopes, Entity SQL tries to locate the name in the global scopes (the namespaces).
+
+A tablespace is a unit of database storage that is roughly equivalent to a file group in Microsoft SQL Server. Tablespaces allow storage and management of database objects within individual groups.
+
+Entity SQL is a SQL-like language that enables you to query conceptual models in the Entity Framework. Conceptual models represent data as entities and relationships, and Entity SQL allows you to query those entities and relationships in a format that is familiar to those who have used SQL.
+
+In SQL database schema is a set of logical objects of the data. SQL scheme has the same name as the database, and it can be controlled and owned by the database user.
+
+3.	What are the different types of joins and constraints used in SQL? please check online tutorials
+Types of SQL JOIN - javatpoint – Answer in this link
+
+4.	Differences between DELETE and TRUNCATE statements are to be known.
+Difference between DELETE and TRUNCATE - GeeksforGeeks – Answer in this link
+SQL Constraints (w3schools.com) – Answer in this link
+
+5.	What is index process? What are its types? Differences between Clustered and Non-Clustered Index?
+SQL indexes - GeeksforGeeks – Answer in this link
+
+
+6.	How to give a proper business reason for using a view?
+Views are used for security purposes because they provide encapsulation of the name of the table. Data is in the virtual table, not stored permanently. Views display only selected data.
+
+7.	What is the order of execution followed for clauses/conditions/functions/subqueries etc., when a SQL query is run?
+The phases involved in the logical processing of an SQL query are as follows: FROM clause; ON clause; OUTER clause; WHERE clause; GROUP BY clause; HAVING clause; SELECT clause; DISTINCT clause; ORDER BY clause; TOP clause; In practice this order of execution is most likely unchanged from above. With this information, we can fine-tune our queries for speed and performance.
+8.	What are SQL operators?
+SQL operators are the special keywords or characters that perform specific operations. They are also used in SQL queries. These operators can be used within the WHERE clause of SQL commands. Based on the specified condition, SQL operators filter the data. 
+The SQL operators can be categorized into the following types:
+•	Arithmetic Operators: For mathematical operations on numerical data 
+o	addition (+)
+o	subtraction (-)
+o	multiplication (*)
+o	division (/)
+o	remainder/modulus (%)
+•	Logical Operators: For evaluating the expressions and return results in True or False
+o	ALL
+o	AND
+o	ANY
+o	ISNULL
+o	EXISTS
+o	BETWEEN
+o	IN 
+o	LIKE
+o	NOT
+o	OR 
+o	UNIQUE
+•	Comparison Operators: For comparisons of two values and checking whether they are the same or not 
+o	equal to (=)
+o	not equal to (!= or <>)
+o	less than (<), 
+o	greater than (>)
+o	less than or equal to (<=)
+o	greater than or equal to (>=)
+o	not less than (!<)
+o	not greater than (!>)
+•	Bitwise Operators: For bit manipulations between two expressions of integer type. It first performs conversion of integers into binary bits and then applied operators 
+o	AND (& symbol)
+o	OR (|, ^)
+o	NOT (~)
+•	Compound Operators: For operations on a variable before setting the variable’s result to the operation’s result
+o	Add equals (+=)
+o	subtract equals (-=)
+o	multiply equals (*=)
+o	divide equals (/=)
+o	modulo equals (%=)
+•	String Operators: For concatenation and pattern matching of strings
+o	+ (String concatenation)
+o	+= (String concatenation assignment)
+o	% (Wildcard)
+o	[] (Character(s) matches)
+o	[^] (Character(s) not to match)
+o	_ (Wildcard match one character)
+9.	What is a data warehouse?
+A data warehouse is a large store of accumulated data, from a wide range of sources, within an organization. The data helps drive business decisions.
+10.	How would you find the second highest salary from the following table?
+ 
+Code:
+select * from employee
+select max(e_salary) from employee where e_salary not in (select max(e_salary) from employee)
+Output:
+ 
+
+11.	State the differences between clustered and non-clustered indexes
+•	Clustered Index: It is used to sort the rows of data by their key values. A clustered index is like the contents of a phone book. We can open the book at “David” (for “David, Thompson”) and find information for all Davids right next to each other. Since the data is located next to each other, it helps a lot in fetching the data based on range-based queries. A clustered index is actually related to how the data is stored; only one clustered index is possible per table.
+•	Non-clustered Index: It stores data at one location and indexes at another location. The index has pointers that point to the location of the data. As the indexes in a non-clustered index are stored in a different place, there can be many non-clustered indexes for a table.
+ 
+Now, we will see the major differences between clustered and non-clustered indexes:
+Parameters	Clustered Index	Non-clustered Index
+Used For	Sorting and storing records physically in memory	Creating a logical order for data rows; pointers are used for physical data files
+Methods for Storing	Stores data in the leaf nodes of the index	Never stores data in the leaf nodes of the index
+Size	Quite large	Comparatively, small
+Data Accessing	Fast	Slow
+Additional Disk Space	Not required	Required to store indexes separately
+Type of Key	By default, the primary key of a table is a clustered index	It can be used with the unique constraint on the table that acts as a composite key
+Main Feature	Improves the performance of data retrieval	Should be created on columns used in Joins
+
+12.	What is the difference between SQL and MySQL?
+Now Let’s compare the difference between SQL and MySQL.
+SQL	MySQL
+It is a structured query language used in a database	It is a database management system
+It is used for query and operating database system	It allows data handling, storing, and modifying in an organized manner
+It is always the same	It keeps updating
+It supports only a single storage engine	It supports multiple storage engines
+The server is independent	During backup sessions, the server blocks the database
+13.	State the differences between SQL and PL/SQL
+SQL	PL/SQL
+It is a database structured query language	It is a programming language for a database that uses SQL
+It is an individual query that is used to execute DML and DDL commands	It is a block of codes that are used to write the entire procedure or a function
+It is a declarative and data-oriented language	It is a procedural and application-oriented language
+It is mainly used for data manipulation	It is used for creating applications
+It provides interaction with the database server	It does not provide interaction with the database server
+It cannot contain PL/SQL code	It can contain SQL because it is an extension of SQL
+
+14.	What do you understand about a character manipulation function?
+Character manipulation functions are used for the manipulation of character data types.
+Some of the character manipulation functions are:
+UPPER: It returns the string in uppercase.
+Syntax:
+UPPER(‘ string’)
+Example:
+SELECT UPPER(‘demo string’) from String;
+Output:
+DEMO STRING
+LOWER: It returns the string in lowercase.
+Syntax:
+LOWER(‘STRING’)
+Example:
+SELECT LOWER (‘DEMO STRING’) from String
+Output:
+demo string
+INITCAP: It converts the first letter of the string to uppercase and retains others in lowercase.
+Syntax:
+Initcap(‘sTRING’)
+Example:
+SELECT Initcap(‘dATASET’) from String
+Output:
+Dataset
+CONCAT: It is used to concatenate two strings.
+Syntax:
+CONCAT(‘str1’,’str2’)
+Example:
+SELECT CONCAT(‘Data’,’Science’) from String
+Output:
+Data Science
+LENGTH: It is used to get the length of a string.
+Syntax:
+LENGTH(‘String’)
+Example:
+SELECT LENGTH(‘Hello World’) from String
+Output:
+11
+
+15.	What is the difference between DELETE and TRUNCATE commands?
+•	DELETE: This query is used to delete or remove one or more existing tables.
+•	TRUNCATE: This statement deletes all the data from inside a table.
+ 
+The difference between DELETE and TRUNCATE commands are as follows:
+•	TRUNCATE is a DDL command, and DELETE is a DML command.
+•	With TRUNCATE, we cannot really execute and trigger, while with DELETE, we can accomplish a trigger.
+•	If a table is referenced by foreign key constraints, then TRUNCATE will not work. So, if we have a foreign key, then we have to use the DELETE command.
+The syntax for the DELETE command:
+DELETE FROM table_name
+[WHERE condition];
+Example:
+select * from stu
+Output:
+ 
+delete from stu where s_name=’Bob’
+Output:
+ 
+The syntax for the TRUNCATE command:
+TRUNCATE TABLE
+Table_name;
+Example:
+select * from stu1
+Output:
+ 
+truncate table stu1
+Output:
+ 
+This deletes all the records from a table.
+16.	What is the difference between DROP and TRUNCATE commands?
+If a table is dropped, all things associated with that table are dropped as well. This includes the relationships defined on the table with other tables, access privileges, and grants that the table has, as well as the integrity checks and constraints. 
+To create and use the table again in its original form, all the elements associated with the table need to be redefined. 
+However, if a table is truncated, there are no such problems as mentioned above. The table retains its original structure.
+17.	What is a “TRIGGER” in SQL?
+The trigger can be defined as an automatic process that happens when an event occurs in the database server. It helps to maintain the integrity of the table. The trigger is activated when the commands, such as insert, update, and delete, are given.
+The syntax used to generate the trigger function is:
+CREATE TRIGGER trigger_name
+18.	What are some common clauses used with SELECT queries in SQL?
+There are many SELECT statement clauses in SQL. Some of the most commonly used clauses with SELECT queries are:
+•	FROM
+The FROM clause defines the tables and views from which data can be interpreted. The tables and views listed must exist at the time the question is given.
+•	WHERE
+The WHERE clause defines the parameters that are used to limit the contents of the results table. You can test for basic relationships or for relationships between a column and a series of columns using subselects.
+•	GROUP BY
+The GROUP BY clause is commonly used for aggregate functions to produce a single outcome row for each set of unique values in a set of columns or expressions.
+•	ORDER BY
+The ORDER BY clause helps in choosing the columns on which the table’s result should be sorted.
+•	HAVING
+The HAVING clause filters the results of the GROUP BY clause by using an aggregate function.
+19.	What are views? Give an example.
+Views are virtual tables used to limit the tables that we want to display. Views are nothing but the result of an SQL statement that has a name associated with it. Since views are not physically present, they take less space to store.
+ 
+Let us consider an example. In the following employee table, say we want to perform multiple operations on the records with gender “Female”. We can create a view-only table for the female employees from the entire employee table.
+Now, let us implement it on SQL Server.
+This is the employee table:
+select * from employee
+ 
+Now, we will write the syntax for the view.
+Syntax:
+create view female_employee as select * from employee where e_gender=’Female’
+select * from female_employee
+Output:
+ 
+20.	What are the types of views in SQL?
+In SQL, the views are classified into four types. They are:
+•	Simple View: A view that is based on a single table and does not have a GROUP BY clause or other features.
+•	Complex View: A view that is built from several tables and includes a GROUP BY clause as well as functions.
+•	Inline View: A view that is built on a subquery in the FROM clause, which provides a temporary table and simplifies a complicated query.
+•	Materialized View: A view that saves both the definition and the details. It builds data replicas by physically preserving them.
+21.	What is a stored procedure? Give an example.
+A stored procedure is a prepared SQL code that can be saved and reused. In other words, we can consider a stored procedure to be a function consisting of many SQL statements to access the database system. We can consolidate several SQL statements into a stored procedure and execute them whenever and wherever required.
+A stored procedure can be used as a means of modular programming, i.e., we can create a stored procedure once, store it, and call it multiple times as required. This also supports faster execution when compared to executing multiple queries.
+Syntax:
+CREATE PROCEDURE procedure_name
+AS
+Sql_statement
+GO;
+To execute we will use this:
+EXEC procedure_name
+Example:
+We are going to create a stored procedure that will help us extract the age of the employees.
+create procedure employee_age
+as
+select e_age from employee
+go
+Now, we will execute it.
+exec employee_age
+Output:
+ 
